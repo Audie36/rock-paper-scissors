@@ -12,6 +12,11 @@
             let playerSelection;
             let computerSelection;
 
+            // Initialize scores
+
+            let compScore = 0;
+            let playerScore = 0;
+
             // [x] Computer choice - computerPlay() function - randomly return either 'Rock', 'Paper' or 'Scissors'.
 
             function computerPlay(){
@@ -68,8 +73,8 @@
 
                 // Computer & Player choices made
 
-                console.log("Computer First Play Game: " + computerSelection);
-                console.log("Player First Play Game: " + playerSelection);
+                console.log("Computer Choice: " + computerSelection);
+                console.log("Player Choice: " + playerSelection);
 
                 // Comparison
 
@@ -79,21 +84,21 @@
                             case "Rock":
                             
                                 
-                                return "You Tied!  " + playerSelection + " is equal to " + computerSelection + "!";
+                                return "You Tied!  " + playerSelection + " is equal to " + computerSelection + "!" + "  Score is now Computer: " + compScore + " vs. Player: " + playerScore;;
                                 break;
 
                             case "Paper":
 
-                                //playerScore++;
-                                return "You Won!  " + playerSelection + " beats " + computerSelection + "!";
+                                playerScore++;
+                                return "You Won!  " + playerSelection + " beats " + computerSelection + "!" + "  Score is now Computer: " + compScore + " vs. Player: " + playerScore;;
                                 break;
 
                             case "Scissors":
 
-                                //compScore++;
+                                compScore++;
 
 
-                                return "You Lose!  " + computerSelection + " beats " + playerSelection + "!";
+                                return "You Lose!  " + computerSelection + " beats " + playerSelection + "!" + "  Score is now Computer: " + compScore + " vs. Player: " + playerScore;;
                                 break;
                         }
 
@@ -101,23 +106,23 @@
                         switch(playerSelection){
                             case "Rock":
                             
-                                //compScore++;
+                                compScore++;
 
 
-                                return "You Lose!  " + computerSelection + " beats " + playerSelection + "!";
+                                return "You Lose!  " + computerSelection + " beats " + playerSelection + "!" + "  Score is now Computer: " + compScore + " vs. Player: " + playerScore;;
                                 break;
 
                             case "Paper":
 
-                                return "You Tied!  " + playerSelection + " is equal to " + computerSelection + "!";
+                                return "You Tied!  " + playerSelection + " is equal to " + computerSelection + "!" + "  Score is now Computer: " + compScore + " vs. Player: " + playerScore;;
                                 break;
 
 
                             case "Scissors":
 
-                                //playerScore++;
+                                playerScore++;
 
-                                return "You Won!  " + playerSelection + " beats " + computerSelection + "!";
+                                return "You Won!  " + playerSelection + " beats " + computerSelection + "!" + "  Score is now Computer: " + compScore + " vs. Player: " + playerScore;;
                                 break;
                         }
 
@@ -125,22 +130,22 @@
                     switch(playerSelection){
                             case "Rock":
                             
-                                //playerScore++;
+                                playerScore++;
 
-                                return "You Won!  " + playerSelection + " beats " + computerSelection + "!";
+                                return "You Won!  " + playerSelection + " beats " + computerSelection + "!" + "  Score is now Computer: " + compScore + " vs. Player: " + playerScore;
                                 break;
 
                             case "Paper":
 
-                                //compScore++;
+                                compScore++;
 
 
-                                return "You Lose!  " + computerSelection + " beats " + playerSelection + "!";
+                                return "You Lose!  " + computerSelection + " beats " + playerSelection + "!" + "  Score is now Computer: " + compScore + " vs. Player: " + playerScore;;
                                 break;
 
                             case "Scissors":
 
-                                return "You Tied!  " + playerSelection + " is equal to " + computerSelection + "!";
+                                return "You Tied!  " + playerSelection + " is equal to " + computerSelection + "!" + "  Score is now Computer: " + compScore + " vs. Player: " + playerScore;;
                                 break;
 
                         }
@@ -156,6 +161,8 @@
                 console.log(playRound(playerSelection, computerSelection));
                 console.log(playRound(playerSelection, computerSelection));
                 console.log(playRound(playerSelection, computerSelection));
+
+               
             }
             console.log(game());
 
