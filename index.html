@@ -7,6 +7,11 @@
 
         <script>
 
+            // Initialize playerSelection & computerSelection
+
+            let playerSelection;
+            let computerSelection;
+
             // [x] Computer choice - computerPlay() function - randomly return either 'Rock', 'Paper' or 'Scissors'.
 
             function computerPlay(){
@@ -25,9 +30,7 @@
                 }
             };
 
-            // Convert computerPlay() -> to variable "computerSelection"
-
-            const computerSelection = computerPlay();
+            
 
             // [x] Get user input - Convert to correct form
 
@@ -40,9 +43,7 @@
 
             }
 
-            // Convert getPlayerInput() -> to variable "playerSelection"
-
-            const playerSelection = getPlayerInput();
+            
 
             // Make input case - insensitive
             
@@ -56,6 +57,14 @@
             // Play Round
 
             function playRound(playerSelection, computerSelection){
+
+                // Get Computer Choice & Convert computerPlay() -> to variable "computerSelection"
+
+                computerSelection = computerPlay();
+
+                // Get User Choice & Convert getPlayerInput() -> to variable "playerSelection"
+
+                playerSelection = getPlayerInput();
 
                 // Computer & Player choices made
 
@@ -139,8 +148,16 @@
                 }
 
             }
+            // Run game - Play 5 Rounds
 
-            console.log(playRound(playerSelection, computerSelection));
+            function game(){
+                console.log(playRound(playerSelection, computerSelection));
+                console.log(playRound(playerSelection, computerSelection));
+                console.log(playRound(playerSelection, computerSelection));
+                console.log(playRound(playerSelection, computerSelection));
+                console.log(playRound(playerSelection, computerSelection));
+            }
+            console.log(game());
 
         </script>
 
