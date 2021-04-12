@@ -2,8 +2,13 @@
 <html>
     <head>
         <title>Rock, Paper, Scissors</title>
+        <link href="../rock-paper-scissors/maincss.css" rel="stylesheet">
     </head>
     <body>
+        <div id="header"><h1>Rock, Paper, Scissors</h1></div>
+        <div id="choices">
+        <div id="rock" class="button"></div><div id="paper" class="button"></div><div id="scissors" class="button"></div>
+        </div>
 
         <script>
 
@@ -39,9 +44,9 @@
 
             // [x] Get user input - Convert to correct form
 
-            function getPlayerInput(){  
-                let playerInput = window.prompt("Rock, Paper, or Scissors?");
-
+            function getPlayerInput(playerClick){  
+                //let playerInput = window.prompt("Rock, Paper, or Scissors?");
+                playerInput = playerClick
                 playerChoice = caseInsensitive(playerInput);
 
                 return playerChoice;
