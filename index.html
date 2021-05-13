@@ -7,9 +7,9 @@
     <body>
         <div id="header"><h1>Rock, Paper, Scissors</h1></div>
         <div id="choices">
-            <div id="rock" class="button"><img src="images/rock.png" class="buttonimage"><h3>Rock</h3></div>
-            <div id="paper" class="button"><img src="images/paper.png" class="buttonimage"><h3>Paper</h3></div>
-            <div id="scissors" class="button"><img src="images/scissors.png" class="buttonimage"><h3>Scissors</h3></div>
+            <div id="rock" class="button" value="Rock"><img src="images/rock.png" class="buttonimage"><h3>Rock</h3></div>
+            <div id="paper" class="button" value="Paper"><img src="images/paper.png" class="buttonimage"><h3>Paper</h3></div>
+            <div id="scissors" class="button" value="Scissors"><img src="images/scissors.png" class="buttonimage"><h3>Scissors</h3></div>
         </div>
 
         <script>
@@ -23,6 +23,13 @@
 
             let compScore = 0;
             let playerScore = 0;
+
+            // Make buttons clickable:
+
+            document.getElementById("rock").addEventListener("click", playRound);
+            document.getElementById("paper").addEventListener("click", playRound);
+            document.getElementById("scissors").addEventListener("click", playRound);
+
 
             // [x] Computer choice - computerPlay() function - randomly return either 'Rock', 'Paper' or 'Scissors'.
 
@@ -45,7 +52,7 @@
             
 
             // [x] Get user input - Convert to correct form
-
+            /*
             function getPlayerInput(playerClick){  
                 //let playerInput = window.prompt("Rock, Paper, or Scissors?");
                 playerInput = playerClick
@@ -54,17 +61,18 @@
                 return playerChoice;
 
             }
-
+            */
             
 
             // Make input case - insensitive
-            
+            /*
             function caseInsensitive(playerInput){
                 playerFirstLetter = playerInput.charAt(0).toUpperCase();
                 playerRemainingWord = playerInput.substr(1).toLowerCase();
                 playerInput = playerFirstLetter.concat("", playerRemainingWord);
                 return playerInput;
             }
+            */
 
             // Play Round
 
@@ -76,7 +84,9 @@
 
                 // Get User Choice & Convert getPlayerInput() -> to variable "playerSelection"
 
-                playerSelection = getPlayerInput();
+                playerSelection = document.getElementById.value;
+
+                // playerSelection = getPlayerInput(playerClick);
 
                 // Computer & Player choices made
 
