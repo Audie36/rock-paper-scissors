@@ -56,3 +56,28 @@ h3{
     margin: 5%;
     font-size: 20px;
 }
+#inputField{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.roundSelect{
+    display: flex;
+    color: orange;
+    justify-content: space-evenly;
+    margin: 5%;
+    font-size: 15px;
+}
+#roundInput{
+    display: flex;
+    color: orange;
+    justify-content: space-evenly;
+    width: 150px;
+    margin: 5%;
+    font-size: 15px;
+    background-color: black;
+    border-radius: 20px;
+    border-color: orange;
+    text-align: center;
+    text-align-last: center;
+}
