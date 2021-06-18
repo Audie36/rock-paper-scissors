@@ -19,13 +19,19 @@
                 // Initialize playerSelection & computerSelection
 
 
-                let playerSelection, computerSelection;
+                let playerSelection, computerSelection, roundResponse;
 
                 // Initialize scores
 
                 let compScore = 0;
                 let playerScore = 0;
 
+                // Initialize output div
+
+                let response = document.querySelector('#results');
+
+
+            // Make buttons clickable - on click, play round
            
             let buttons = document.querySelectorAll('.button');
 
@@ -51,16 +57,7 @@
             };
 
 
-            
-            function getPlayerSelection(e){
-
-            // Make buttons clickable:
-            const buttons = document.querySelectorAll('.button');
-
-            
-           
-            
-            };*/
+            */
 
        
             // [x] Computer choice - computerPlay() function - randomly return either 'Rock', 'Paper' or 'Scissors'.
@@ -80,22 +77,6 @@
                         break;
                 }
             };
-
-            
-
-            // [x] Get user input - Convert to correct form
-            
-            /*
-            function getPlayerInput(playerClick){  
-                //let playerInput = window.prompt("Rock, Paper, or Scissors?");
-                playerInput = playerClick
-                playerChoice = caseInsensitive(playerInput);
-
-                return playerChoice;
-
-            }
-            */
-            
 
             // Make input case - insensitive
             /*
@@ -126,9 +107,9 @@
 
                 // Comparison
 
-                findWinner(playerSelection, computerSelection);
+                response.innerHTML = roundWinner(playerSelection, computerSelection);
 
-                function findWinner(playerSelection, computerSelection){
+                function roundWinner(playerSelection, computerSelection){
 
                     switch(computerSelection){
                         case "Rock":
@@ -142,6 +123,7 @@
                                 case "Paper":
 
                                     playerScore++;
+                                    
                                     return "You Won!  " + playerSelection + " beats " + computerSelection + "!" + "  Score is now Computer: " + compScore + " vs. Player: " + playerScore;;
                                     break;
 
@@ -202,11 +184,11 @@
 
                             }
 
-                        
-
                     }
-
+                    
                 }
+
+
             }
             // Run game - Play 5 Rounds
             /*
