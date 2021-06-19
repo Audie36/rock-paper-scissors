@@ -8,16 +8,16 @@
         <div id="inputField">
             <p class="roundSelect">Number of Wins</p>
             <select id="roundInput" class="roundSelect">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5" selected>5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
+                <option value=1>1</option>
+                <option value=2>2</option>
+                <option value=3>3</option>
+                <option value=4>4</option>
+                <option value=5 selected>5</option>
+                <option value=6>6</option>
+                <option value=7>7</option>
+                <option value=8>8</option>
+                <option value=9>9</option>
+                <option value=10>10</option>
             </select>
         </div>
 
@@ -35,7 +35,7 @@
                 // Initialize playerSelection & computerSelection
 
 
-                let playerSelection, computerSelection, roundResponse;
+                let playerSelection, computerSelection;
 
                 // Initialize scores
 
@@ -46,7 +46,34 @@
 
                 let response = document.querySelector('#results');
 
+            // Initialize # of Wins
 
+            let roundSelector;
+
+            let numberOfRounds = 5;
+
+            roundSelector = document.querySelector('#roundInput'); 
+
+            console.log("First Round Selector: " + roundSelector.value);
+
+            // Initialize finalRoundsMessage
+
+            let finalRoundsMessage;
+            
+            // Change # of Wins on select
+            
+            roundSelector.addEventListener("change", (e) => {
+
+                    numberOfRounds = roundSelector.options[roundSelector.selectedIndex].getAttribute('value');
+
+                    console.log("Second Round Selector: " + numberOfRounds);
+
+                    return numberOfRounds;
+
+                });
+
+
+                  
             // Make buttons clickable - on click, play round
            
             let buttons = document.querySelectorAll('.button');
@@ -150,6 +177,8 @@
 
                                     return "You Lose!  " + computerSelection + " beats " + playerSelection + "!" + "Computer: " + compScore + " vs. Player: " + playerScore;
                                     break;
+
+
                             }
 
                         case "Paper":
@@ -203,9 +232,9 @@
                     }
                     
                 }
+            
+            
 
-
-            }
             // Run game - Play 5 Rounds
             /*
             function game(){
@@ -219,6 +248,26 @@
             }
             console.log(game());
             */
+
+            // Track the final winner of the game
+
+
+            if (compScore == numberOfRounds){
+
+                finalRoundsMessage = "Sorry, the computer won the game.  The final score was " + "Computer: " + compScore + " Player: " + playerScore;
+
+            }
+            else if (playerScore == numberOfRounds){
+
+                finalRoundsMessage = "Congratulations!  You won the game!  The final score was " + "Computer: " + compScore + " Player: " + playerScore;
+            }
+            else {
+
+                finalRoundsMessage = "You tied!  The final score was " + "Computer: " + compScore + " Player: " + playerScore;
+
+            }
+
+        }
 
         </script>
 
