@@ -33,6 +33,12 @@
 
         <script>
 
+                // Rotate images 90 degrees
+
+                let images = document.querySelectorAll('img');
+
+                images.forEach(img => img.style.transform = "rotate(90deg)");
+                
                 // Initialize playerSelection & computerSelection
 
 
@@ -161,14 +167,14 @@
                                 case "Rock":
                                 
                                 
-                                    return "You Tied!  " + playerSelection + " is equal to " + computerSelection + "!" + "Computer: " + compScore + " vs. Player: " + playerScore;
+                                    return "You Tied!  " + playerSelection + " is equal to " + computerSelection + "!" + "<br>" + "<br>" + "Computer: " + compScore + " vs. Player: " + playerScore;
                                     break;
 
                                 case "Paper":
 
                                     playerScore++;
                                     
-                                    return "You Won!  " + playerSelection + " beats " + computerSelection + "!" + "Computer: " + compScore + " vs. Player: " + playerScore;
+                                    return "You Won!  " + playerSelection + " beats " + computerSelection + "!" + "<br>" + "<br>" + "Computer: " + compScore + " vs. Player: " + playerScore;
                                     break;
 
                                 case "Scissors":
@@ -176,7 +182,7 @@
                                     compScore++;
 
 
-                                    return "You Lose!  " + computerSelection + " beats " + playerSelection + "!" + "Computer: " + compScore + " vs. Player: " + playerScore;
+                                    return "You Lose!  " + computerSelection + " beats " + playerSelection + "!" + "<br>" + "<br>" + "Computer: " + compScore + " vs. Player: " + playerScore;
                                     break;
 
 
@@ -189,12 +195,12 @@
                                     compScore++;
 
 
-                                    return "You Lose!  " + computerSelection + " beats " + playerSelection + "!" + "Computer: " + compScore + " vs. Player: " + playerScore;
+                                    return "You Lose!  " + computerSelection + " beats " + playerSelection + "!" + "<br>" + "<br>" + "Computer: " + compScore + " vs. Player: " + playerScore;
                                     break;
 
                                 case "Paper":
 
-                                    return "You Tied!  " + playerSelection + " is equal to " + computerSelection + "!" + "Computer: " + compScore + " vs. Player: " + playerScore;
+                                    return "You Tied!  " + playerSelection + " is equal to " + computerSelection + "!" + "<br>" + "<br>" + "Computer: " + compScore + " vs. Player: " + playerScore;
                                     break;
 
 
@@ -202,7 +208,7 @@
 
                                     playerScore++;
 
-                                    return "You Won!  " + playerSelection + " beats " + computerSelection + "!" + "Computer: " + compScore + " vs. Player: " + playerScore;
+                                    return "You Won!  " + playerSelection + " beats " + computerSelection + "!" + "<br>" + "<br>" + "Computer: " + compScore + " vs. Player: " + playerScore;
                                     break;
                             }
 
@@ -212,7 +218,7 @@
                                 
                                     playerScore++;
 
-                                    return "You Won!  " + playerSelection + " beats " + computerSelection + "!" + "Computer: " + compScore + " vs. Player: " + playerScore;
+                                    return "You Won!  " + playerSelection + " beats " + computerSelection + "!" + "<br>" + "<br>" + "Computer: " + compScore + " vs. Player: " + playerScore;
                                     break;
 
                                 case "Paper":
@@ -220,12 +226,12 @@
                                     compScore++;
 
 
-                                    return "You Lose!  " + computerSelection + " beats " + playerSelection + "!" + "Computer: " + compScore + " vs. Player: " + playerScore;
+                                    return "You Lose!  " + computerSelection + " beats " + playerSelection + "!" + "<br>" + "<br>" + "Computer: " + compScore + " vs. Player: " + playerScore;
                                     break;
 
                                 case "Scissors":
 
-                                    return "You Tied!  " + playerSelection + " is equal to " + computerSelection + "!" + "Computer: " + compScore + " vs. Player: " + playerScore;
+                                    return "You Tied!  " + playerSelection + " is equal to " + computerSelection + "!" + "<br>" + "<br>" + "Computer: " + compScore + " vs. Player: " + playerScore;
                                     break;
 
                             }
@@ -255,7 +261,7 @@
 
                 if (compScore == numberOfRounds){
 
-                    finalRoundsMessage = "Sorry, the computer won the game.  The final score was " + "Computer: " + compScore + " Player: " + playerScore;
+                    finalRoundsMessage = "Sorry, the computer won the game.  The final score was:" + "<br>" + "<br>" + "Computer: " + compScore + " Player: " + playerScore;
                     console.log("computer won");
 
                     var finalOutput = document.querySelector("#finalResults");
@@ -265,7 +271,7 @@
                 }
                 else if (playerScore == numberOfRounds){
 
-                    finalRoundsMessage = "Congratulations!  You won the game!  The final score was " + "Computer: " + compScore + " Player: " + playerScore;
+                    finalRoundsMessage = "Congratulations!  You won the game!  The final score was:" + "<br>" + "<br>" + "Computer: " + compScore + " Player: " + playerScore;
                     console.log("you won");
 
                     var finalOutput = document.querySelector("#finalResults");
