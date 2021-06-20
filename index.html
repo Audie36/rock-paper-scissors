@@ -29,6 +29,7 @@
         </div>
 
         <div id="results"></div>
+        <div id="finalResults"></div>
 
         <script>
 
@@ -81,7 +82,7 @@
             buttons.forEach((button) => {
                 button.addEventListener("click", (e) => {
 
-                    playRound(button.getAttribute('value'), computerPlay());
+                    playRound(button.getAttribute('value'), computerPlay(), numberOfRounds);
 
                 })
                 });
@@ -133,7 +134,7 @@
             
             // Play Round
 
-            function playRound(playerSelection, computerSelection){
+            function playRound(playerSelection, computerSelection, numberOfRounds){
 
                 // Get Computer Choice & Convert computerPlay() -> to variable "computerSelection"
 
@@ -235,39 +236,47 @@
             
             
 
-            // Run game - Play 5 Rounds
-            /*
-            function game(){
-                console.log(playRound(playerSelection, computerSelection));
-                console.log(playRound(playerSelection, computerSelection));
-                console.log(playRound(playerSelection, computerSelection));
-                console.log(playRound(playerSelection, computerSelection));
-                console.log(playRound(playerSelection, computerSelection));
+                // Run game - Play 5 Rounds
+                /*
+                function game(){
+                    console.log(playRound(playerSelection, computerSelection));
+                    console.log(playRound(playerSelection, computerSelection));
+                    console.log(playRound(playerSelection, computerSelection));
+                    console.log(playRound(playerSelection, computerSelection));
+                    console.log(playRound(playerSelection, computerSelection));
 
-               
-            }
-            console.log(game());
-            */
+                
+                }
+                console.log(game());
+                */
 
             // Track the final winner of the game
 
 
-            if (compScore == numberOfRounds){
+                if (compScore == numberOfRounds){
 
-                finalRoundsMessage = "Sorry, the computer won the game.  The final score was " + "Computer: " + compScore + " Player: " + playerScore;
+                    finalRoundsMessage = "Sorry, the computer won the game.  The final score was " + "Computer: " + compScore + " Player: " + playerScore;
+                    console.log("computer won");
 
+                    var finalOutput = document.querySelector("#finalResults");
+
+                    finalOutput.innerHTML = finalRoundsMessage;
+
+                }
+                else if (playerScore == numberOfRounds){
+
+                    finalRoundsMessage = "Congratulations!  You won the game!  The final score was " + "Computer: " + compScore + " Player: " + playerScore;
+                    console.log("you won");
+
+                    var finalOutput = document.querySelector("#finalResults");
+
+                    finalOutput.innerHTML = finalRoundsMessage;
+
+                }
+                
+                    
             }
-            else if (playerScore == numberOfRounds){
-
-                finalRoundsMessage = "Congratulations!  You won the game!  The final score was " + "Computer: " + compScore + " Player: " + playerScore;
-            }
-            else {
-
-                finalRoundsMessage = "You tied!  The final score was " + "Computer: " + compScore + " Player: " + playerScore;
-
-            }
-
-        }
+        
 
         </script>
 
